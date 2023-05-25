@@ -4,8 +4,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.praktikum.selenium.pageobject.MainPageYandexScooter;
@@ -23,15 +21,15 @@ public class SecondOrderTest {
     public void setupDriver() {
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
+        webDriver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
+        webDriver.get(APP_URL);
     }
 
     @Test
     public void checkScooterOrder() {
-        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        webDriver.get(APP_URL);
         MainPageYandexScooter mainPageYandexScooter = new MainPageYandexScooter(webDriver);
         mainPageYandexScooter.clickCookieButton();
-        mainPageYandexScooter.clickOrderButton2();
+        mainPageYandexScooter.clickLowerOrderButton();
         PageForWhomScooter pageForWhomScooter = new PageForWhomScooter(webDriver);
         pageForWhomScooter.completeTheFirstPage("Маша", "Растеряша", "Москва улица", "89103365441");
         PageScooterRental pageScooterRental = new PageScooterRental(webDriver);

@@ -10,8 +10,7 @@ public class PageForWhomScooter {
  public PageForWhomScooter(WebDriver webDriver) {
   this.webDriver = webDriver;
  }
-    //private By fieldName = By.xpath(".//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/input");
-    //*[@id="root"]/div/div[2]/div[2]/div[1]/input
+
     private By fieldName = By.className("Input_Responsible__1jDKN");
     //поле имя
     private By fieldSurname = By.xpath(".//input[@placeholder='* Фамилия']");

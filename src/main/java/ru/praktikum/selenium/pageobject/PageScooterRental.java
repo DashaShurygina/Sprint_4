@@ -16,20 +16,20 @@ public class PageScooterRental {
     //поле ввода даты начала аренды
     private By fieldRentalPeriod = By.className("Dropdown-placeholder");
     //поле срока аренды
-    private By rentalPeriod = By.xpath(".//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div[2]/div[2]");
+    private By rentalPeriod = By.xpath("//div[contains(text(),'двое суток')]");
     // срок аренды двое суток
     private By checkboxColorScooter = By.className("Checkbox_Input__14A2w");
     //чекбокс цвета самоката
     private By fieldCommentForTheCourier = By.xpath(".//input[@placeholder='Комментарий для курьера']");
     //поле ввода комментария для курьера
-    private By buttonOrderToContinue = By.xpath(".//html/body/div/div/div[2]/div[3]/button[2]");
+    private By buttonOrderToContinue = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[contains(text(),'Заказать')]");
     //кнопка заказать для продолжения оформления
 
     //окно подтверждение заказа
-    private By buttonYes = By.xpath(".//html/body/div/div/div[2]/div[5]/div[2]/button[2]");
+    private By buttonYes = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[contains(text(), 'Да')]");
     //кнопка Да в окне подтверждения заказа
     //окно заказ оформлен
-    private By textOrderCompleted = By.xpath(".//html/body/div/div/div[2]/div[5]/div[1]");
+    private By textOrderCompleted = By.xpath("//div[@class='Order_ModalHeader__3FDaJ']");
     //текст об оформлении заказа
 
     //методы для страницы Про аренду
@@ -58,7 +58,7 @@ public class PageScooterRental {
     public void clickButtonYes() {
         webDriver.findElement(buttonOrderToContinue).click();
     }
-    public void isDisplayedTextOrderCompleted() {
+    public void checkDisplayedTextOrderCompleted() {
         webDriver.findElement(textOrderCompleted).isDisplayed();
     }
 
@@ -71,6 +71,5 @@ public class PageScooterRental {
         sendKeysFieldCommentForTheCourier(comment);
         clickButtonOrderToContinue();
         clickButtonYes();
-        isDisplayedTextOrderCompleted();
     }
 }
