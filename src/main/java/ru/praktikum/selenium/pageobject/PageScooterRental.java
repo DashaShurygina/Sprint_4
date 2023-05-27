@@ -56,7 +56,7 @@ public class PageScooterRental {
         webDriver.findElement(buttonOrderToContinue).click();
     }
     public void clickButtonYes() {
-        webDriver.findElement(buttonOrderToContinue).click();
+        webDriver.findElement(buttonYes).click();
     }
     public void checkDisplayedTextOrderCompleted() {
         webDriver.findElement(textOrderCompleted).isDisplayed();

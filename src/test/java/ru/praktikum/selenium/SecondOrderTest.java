@@ -34,6 +34,7 @@ public class SecondOrderTest {
         pageForWhomScooter.completeTheFirstPage("Маша", "Растеряша", "Москва улица", "89103365441");
         PageScooterRental pageScooterRental = new PageScooterRental(webDriver);
         pageScooterRental.completeTheSecondPage("25.05.2023", "тритри");
+        pageScooterRental.checkDisplayedTextOrderCompleted();
     }
 
     @After
