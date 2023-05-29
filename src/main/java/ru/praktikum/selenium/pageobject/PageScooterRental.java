@@ -29,7 +29,7 @@ public class PageScooterRental {
     private By buttonYes = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[contains(text(), 'Да')]");
     //кнопка Да в окне подтверждения заказа
     //окно заказ оформлен
-    private By textOrderCompleted = By.xpath("//div[@class='Order_ModalHeader__3FDaJ']");
+    private By textOrderCompleted = By.xpath(".//div[text()='Заказ оформлен']");
     //текст об оформлении заказа
 
     //методы для страницы Про аренду
